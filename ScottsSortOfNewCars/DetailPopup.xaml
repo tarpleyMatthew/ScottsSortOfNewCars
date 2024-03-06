@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="ScottsSortOfNewCars.DetailPopup">
+
+    <VerticalStackLayout Padding="20"
+                         Spacing="20">
+        <Image Source="{Binding Path}"
+               HeightRequest="300"
+               Aspect="AspectFit"/>
+
+        <FlexLayout JustifyContent="SpaceBetween">
+            <Label Text="{Binding Name}"
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+            <Label HorizontalTextAlignment="End"
+                   Text="{Binding Year}"
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+        </FlexLayout>
+
+        <VerticalStackLayout>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Miles Driven: "/>
+                        <Span Text="{Binding Miles}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Condition: "/>
+                        <Span Text="{Binding Condition}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="{Binding Description}"
+                   FontSize="Body"
+                   Padding="0,10,0,10"/>
+        </VerticalStackLayout>
+
+        <!--Request Details-->
+        <Button Text="Request Info"
+                BackgroundColor="DodgerBlue"
+                TextColor="White"
+                BorderWidth="0"
+                CornerRadius="5"
+                Padding="20,10,20,10"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="RequestInfo"/>
+
+    </VerticalStackLayout>
+</toolkit:Popup>

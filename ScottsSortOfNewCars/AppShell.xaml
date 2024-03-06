@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>     
+<Shell
+    x:Name="shell"
+    x:Class="ScottsSortOfNewCars.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ScottsSortOfNewCars"
+    Shell.FlyoutBehavior="Flyout"
+    Title="ScottsSortOfNewCars"
+    FlyoutBackgroundColor="DodgerBlue">
+
+    <!--Flyout header-->
+    <Shell.FlyoutHeader>
+        <StackLayout Spacing="2">
+            <Label Text="Scott's Sort of New Cars"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   TextColor="#F8C029"
+                   Style="{StaticResource Headline}"
+                   FontSize="Title"
+                   Padding="2"/>
+            
+            <Label Text="Trusted since 2024"
+                   TextColor="LightGrey"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FontSize="Micro"
+                   FontAttributes="Italic"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+    <!--Custom flyout content-->
+    <Shell.FlyoutContentTemplate>
+        <DataTemplate>
+            <CollectionView BindingContext="{x:Reference shell}"
+                IsGrouped="True"
+                ItemsSource="{Binding FlyoutItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Button Text="{Binding Route}"
+                            BackgroundColor="DodgerBlue"
+                            TextColor="White"
+                            FontSize="18"
+                            Clicked="OnMenuItemClicked"
+                            />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </DataTemplate>
+    </Shell.FlyoutContentTemplate>
+    
+    <!--Flyout footer-->
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="15">
+            <BoxView HeightRequest="25" BackgroundColor="Transparent" />
+            <Label Text="© 2024 Scott's Sort of New Cars" HorizontalOptions="Center" TextColor="White" FontSize="12" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+    
+    <ShellContent
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Inventory}"
+        Route="Inventory"/>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Locations}"
+        Route="Locations"/>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Contact}"
+        Route="Contact"/>
+</Shell>

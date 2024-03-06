@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScottsSortOfNewCars.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout
+                Padding="30,0"
+                Spacing="25">
+
+                <!--Logo Header-->
+                <VerticalStackLayout>
+                    <Image Source="C:\Users\tarpl\OneDrive\Documents\_4Final Semester SWDV\Mobile Development\ScottsSortOfNewCars\ScottsSortOfNewCars\Resources\Images\logo.png"
+                           HeightRequest="250"
+                           WidthRequest="250"
+                           Aspect="AspectFit"/>
+
+                    <Label Text="Scott's Sort of New Cars"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="#F8C029"
+                           Style="{StaticResource Headline}"
+                           FontSize="Title"/>
+
+                    <Label Text="Trusted since 2024"
+                           TextColor="LightGrey"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontSize="Micro"
+                           FontAttributes="Italic"/>
+                </VerticalStackLayout>
+                <!--Welcome-->
+                <Label Text="Welcome"
+                       FontSize="Title"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       TextDecorations="Underline"
+                       Padding="0"
+                       Margin="0"/>
+                
+                <!--Text-->
+                <Label 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    BackgroundColor="DodgerBlue"
+                    TextColor="White"
+                    MaximumWidthRequest="500"
+                    Padding="25"
+                    Text="Welcome to Scott's Sort of New Cars, where vintage dreams meet modern adventures! Immerse yourself in the timeless allure of classic automobiles as you explore Boise's scenic roads in style. Discover our meticulously curated collection, offering a nostalgic journey through the city's streets and beyond. Experience the elegance, nostalgia, and thrill of driving a classic car with Boise Classic Car Rentals today." />
+                
+                <!--car carousel-->
+                <StackLayout>
+                    <Label Text="Our Selection"
+                           FontSize="Title"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           TextDecorations="Underline"
+                           Padding="0"
+                           Margin="0"/>
+
+                    <CollectionView ItemsSource="{Binding Cars}"
+                                    ItemsLayout="HorizontalList">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Margin="20">
+                                    <Frame HasShadow="True"
+                                           BorderColor="DarkGray"
+                                           BackgroundColor="LightGrey"
+                                           CornerRadius="5"
+                                           HeightRequest="400"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="CenterAndExpand">
+                                        <StackLayout>
+                                            <Label Text="{Binding Name}"
+                                                   FontAttributes="Bold"
+                                                   FontSize="18"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center" />
+                                            <Image Source="{Binding Path}"
+                                                   Aspect="AspectFit"
+                                                   HeightRequest="300"
+                                                   WidthRequest="300"
+                                                   HorizontalOptions="Center" />
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+                <!--Our story-->
+                <Label Text="Our Story"
+                       FontSize="Title"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       TextDecorations="Underline"
+                       Padding="0"
+                       Margin="0" />
+
+                <!--Text-->
+                <Label 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    BackgroundColor="DodgerBlue"
+                    TextColor="White"
+                    MaximumWidthRequest="500"
+                    Padding="25"
+                    Text="Every journey becomes a timeless adventure. Founded with a passion for vintage automobiles, our story began with a dream to share the elegance and nostalgia of classic cars with enthusiasts worldwide. With a carefully curated collection and a commitment to excellence, we invite you to embark on a journey through history and create unforgettable memories behind the wheel of our iconic vehicles." />
+
+                <!--browseButton-->
+                <Button Text="Browse"
+                        BackgroundColor="DodgerBlue"
+                        TextColor="White"
+                        BorderWidth="0"
+                        CornerRadius="5"
+                        Padding="20,10,20,10"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand" 
+                        Command="{Binding Click}"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!---Footer-->
+        <StackLayout Grid.Row="1" Padding="15" VerticalOptions="End">
+            <BoxView HeightRequest="25" BackgroundColor="Transparent"/>
+            <Label Text="© 2024 Scott's Sort of New Cars" HorizontalOptions="Center" TextColor="LightGrey" FontSize="12" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

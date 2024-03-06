@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScottsSortOfNewCars.Contact">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+                <!--Logo Header-->
+                <VerticalStackLayout>
+                    <Image Source="C:\Users\tarpl\OneDrive\Documents\_4Final Semester SWDV\Mobile Development\ScottsSortOfNewCars\ScottsSortOfNewCars\Resources\Images\logo.png"
+                       HeightRequest="250"
+                       WidthRequest="250"
+                       Aspect="AspectFit"/>
+
+                    <Label Text="Scott's Sort of New Cars"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#F8C029"
+                       Style="{StaticResource Headline}"
+                       FontSize="Title"/>
+
+                    <Label Text="Trusted since 2024"
+                       TextColor="LightGrey"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="Micro"
+                       FontAttributes="Italic"/>
+                </VerticalStackLayout>
+                <!--Welcome-->
+                <Label Text="Contact Us"
+                   FontSize="Title"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   TextDecorations="Underline"
+                   Padding="0"
+                   Margin="0"/>
+
+                <!--contact form-->
+                <StackLayout Padding="20"
+                             Spacing="10"
+                             MaximumWidthRequest="450">
+                    
+                    <Entry Placeholder="Your Name" Margin="0,0,0,10"/>
+                    <Entry Placeholder="Your Email" Margin="0,0,0,10"/>
+                    <Entry Placeholder="Subject" Margin="0,0,0,10"/>
+                    <Editor Placeholder="Message" HeightRequest="150" Margin="0,0,0,10"/>
+                </StackLayout>
+
+                <!--browseButton-->
+                <Button Text="Send"
+                    BackgroundColor="DodgerBlue"
+                    TextColor="White"
+                    BorderWidth="0"
+                    CornerRadius="5"
+                    Padding="20,10,20,10"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!---Footer-->
+        <StackLayout Grid.Row="1" Padding="15" VerticalOptions="End">
+            <BoxView HeightRequest="25" BackgroundColor="Transparent"/>
+            <Label Text="© 2024 Scott's Sort of New Cars" HorizontalOptions="Center" TextColor="LightGrey" FontSize="12" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScottsSortOfNewCars.Locations">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+                <!--Logo Header-->
+                <VerticalStackLayout>
+                    <Image Source="C:\Users\tarpl\OneDrive\Documents\_4Final Semester SWDV\Mobile Development\ScottsSortOfNewCars\ScottsSortOfNewCars\Resources\Images\logo.png"
+                       HeightRequest="250"
+                       WidthRequest="250"
+                       Aspect="AspectFit"/>
+
+                    <Label Text="Scott's Sort of New Cars"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#F8C029"
+                       Style="{StaticResource Headline}"
+                       FontSize="Title"/>
+
+                    <Label Text="Trusted since 2024"
+                       TextColor="LightGrey"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="Micro"
+                       FontAttributes="Italic"/>
+                </VerticalStackLayout>
+
+                <!--Location 1-->
+                <VerticalStackLayout
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Spacing="20">
+
+                    <Label Text="Boise Location" FontSize="Medium" HorizontalTextAlignment="Center" TextDecorations="Underline"/>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                        <Image Source="C:\Users\tarpl\OneDrive\Documents\_4Final Semester SWDV\Mobile Development\Project1\Project1\Resources\Images\boise.jpg"
+                               WidthRequest="250"
+                               HeightRequest="250"
+                               Aspect="AspectFill"/>
+
+                    </Grid>
+                    <Label
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="DodgerBlue"
+                        MaximumWidthRequest="250"
+                        Padding="25"
+                        Text="1234 Main Street Boise, ID 83702"
+                        TextColor="White"
+                        FontAttributes="Bold"/>
+                </VerticalStackLayout>
+
+                <!--Location 2-->
+                <VerticalStackLayout
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Spacing="20">
+
+                    <Label Text="Nampa Location" FontSize="Medium" HorizontalTextAlignment="Center" TextDecorations="Underline"/>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                        <Image Source="C:\Users\tarpl\OneDrive\Documents\_4Final Semester SWDV\Mobile Development\Project1\Project1\Resources\Images\boise.jpg"
+                               WidthRequest="250"
+                               HeightRequest="250"
+                               Aspect="AspectFill"/>
+
+                    </Grid>
+                    <Label
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="DodgerBlue"
+                        MaximumWidthRequest="250"
+                        Padding="25"
+                        Text="5678 Elm Avenue Nampa, ID 83651"
+                        TextColor="White"
+                        FontAttributes="Bold"/>
+                </VerticalStackLayout>
+
+                <!--Location 3-->
+                <VerticalStackLayout
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Spacing="20">
+
+                    <Label Text="Caldwell Location" FontSize="Medium" HorizontalTextAlignment="Center" TextDecorations="Underline"/>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                        <Image Source="C:\Users\tarpl\OneDrive\Documents\_4Final Semester SWDV\Mobile Development\Project1\Project1\Resources\Images\boise.jpg"
+                               WidthRequest="250"
+                               HeightRequest="250"
+                               Aspect="AspectFill"/>
+
+                    </Grid>
+                    <Label
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="DodgerBlue"
+                        MaximumWidthRequest="250"
+                        Padding="25"
+                        Text="910 Oak Lane Caldwell, ID 83605"
+                        TextColor="White"
+                        FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!---Footer-->
+        <StackLayout Grid.Row="1" Padding="15" VerticalOptions="End">
+            <BoxView HeightRequest="25" BackgroundColor="Transparent"/>
+            <Label Text="© 2024 Scott's Sort of New Cars" HorizontalOptions="Center" TextColor="LightGrey" FontSize="12" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

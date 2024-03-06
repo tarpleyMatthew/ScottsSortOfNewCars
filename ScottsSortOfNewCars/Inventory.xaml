@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScottsSortOfNewCars.Inventory">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+                <!--Logo Header-->
+                <VerticalStackLayout>
+                    <Image Source="C:\Users\tarpl\OneDrive\Documents\_4Final Semester SWDV\Mobile Development\ScottsSortOfNewCars\ScottsSortOfNewCars\Resources\Images\logo.png"
+                       HeightRequest="250"
+                       WidthRequest="250"
+                       Aspect="AspectFit"/>
+
+                    <Label Text="Scott's Sort of New Cars"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#F8C029"
+                       Style="{StaticResource Headline}"
+                       FontSize="Title"/>
+
+                    <Label Text="Trusted since 2024"
+                       TextColor="LightGrey"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="Micro"
+                       FontAttributes="Italic"/>
+                </VerticalStackLayout>
+
+                <Label Text="Inventory"
+                       FontSize="Title"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       TextDecorations="Underline"
+                       Padding="0"
+                       Margin="0"/>
+
+                <!--"grid" for car selection-->
+                <FlexLayout BindableLayout.ItemsSource="{Binding Cars}"
+                            JustifyContent="SpaceEvenly"
+                            Wrap="Wrap">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout WidthRequest="200"
+                                                 Margin="10"
+                                                 Spacing="10">
+                                <VerticalStackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="DisplayCarDetail"/>
+                                </VerticalStackLayout.GestureRecognizers>
+
+                                <Image Source="{Binding Path}"
+                                   Aspect="AspectFit">
+                                    <Image.Shadow>
+                                        <Shadow Brush="Black"
+                                            Opacity="0.6"
+                                            Offset="5,5"
+                                            Radius="20"/>
+                                    </Image.Shadow>
+                                </Image>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding Name}"
+                                       FontAttributes="Bold"
+                                       WidthRequest="150"
+                                       LineBreakMode="TailTruncation"
+                                       HorizontalTextAlignment="Center"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!---Footer-->
+        <StackLayout Grid.Row="1" Padding="15" VerticalOptions="End">
+            <BoxView HeightRequest="25" BackgroundColor="Transparent"/>
+            <Label Text="© 2024 Scott's Sort of New Cars" HorizontalOptions="Center" TextColor="LightGrey" FontSize="12" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
